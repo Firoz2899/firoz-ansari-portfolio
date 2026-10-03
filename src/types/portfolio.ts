@@ -1,3 +1,3 @@
-import {navLinks} from '@/data/portfolio'
+import {navLinks} from '@/components/NavLinks'
 
 export type NavHref = (typeof navLinks)[number]['href'];

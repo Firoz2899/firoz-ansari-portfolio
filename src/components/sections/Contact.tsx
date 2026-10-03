@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Mail, MapPin, Send, Github, Linkedin, Twitter, CheckCircle2 } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle2 } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import { socials } from '@/components/SocialLinks';
 import { profile } from '@/data/portfolio';
 
 export default function Contact() {
@@ -20,12 +21,6 @@ export default function Contact() {
   const contactInfo = [
     { icon: Mail, label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
     { icon: MapPin, label: 'Location', value: profile.location, href: '#' },
-  ];
-
-  const socials = [
-    { icon: Github, href: profile.social.github, label: 'GitHub' },
-    { icon: Linkedin, href: profile.social.linkedin, label: 'LinkedIn' },
-    { icon: Twitter, href: profile.social.twitter, label: 'Twitter' },
   ];
 
   return (
@@ -73,7 +68,7 @@ export default function Contact() {
               <div className="mt-auto">
                 <div className="text-sm text-ink-300 mb-3">Follow me</div>
                 <div className="flex items-center gap-3">
-                  {socials.map((social) => (
+                  {socials.filter(x => x.show).map((social) => (
                     <a
                       key={social.label}
                       href={social.href}

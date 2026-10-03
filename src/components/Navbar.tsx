@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { navLinks } from '@/data/portfolio';
+import { navLinks } from '@/components/NavLinks';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 import { useTheme } from '@/hooks/useTheme';
 
@@ -14,7 +14,7 @@ export default function Navbar() {
     const onScroll = () => {
       setScrolled(window.scrollY > 24);
 
-      const sections = navLinks.map((l) => l.href);
+      const sections = navLinks.filter(x => x.show).map((l) => l.href);
       const current = sections.find((href) => {
         const el = document.querySelector(href);
         if (!el) return false;
@@ -62,7 +62,7 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
+            {navLinks.filter(x => x.show).map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -123,7 +123,7 @@ export default function Navbar() {
           }`}
         >
           <div className="flex flex-col gap-1">
-            {navLinks.map((link) => (
+            {navLinks.filter(x => x.show).map((link) => (
               <a
                 key={link.href}
                 href={link.href}

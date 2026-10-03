@@ -43,6 +43,7 @@ export default function Projects() {
               github={project.github}
               featured={project.featured}
               index={index}
+              haveScreenshots={project.images.length > 0}
               onOpenSlider={() => openSlider(index)}
             />
           ))}

@@ -1,13 +1,9 @@
-import { ArrowUp, Github, Linkedin, Twitter, Heart } from 'lucide-react';
+import { ArrowUp, Heart } from 'lucide-react';
 import { profile } from '@/data/portfolio';
-import { navLinks } from '@/data/portfolio';
+import { navLinks } from '@/components/NavLinks';
+import { socials } from '@/components/SocialLinks';
 
 export default function Footer() {
-  const socials = [
-    { icon: Github, href: profile.social.github, label: 'GitHub' },
-    { icon: Linkedin, href: profile.social.linkedin, label: 'LinkedIn' },
-    { icon: Twitter, href: profile.social.twitter, label: 'Twitter' },
-  ];
 
   return (
     <footer className="relative section-pad pt-20 pb-8 border-t border-white/5">
@@ -55,7 +51,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-3">
-            {socials.map((social) => (
+            {socials.filter(x => x.show).map((social) => (
               <a
                 key={social.label}
                 href={social.href}

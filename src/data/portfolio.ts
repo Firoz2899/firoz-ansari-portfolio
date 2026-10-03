@@ -1,21 +1,23 @@
+import developerImage from "@/assets/images/Developer-Image.jpg"
+
 export const profile = {
-  name: 'Alex Rivera',
+  name: 'Firoz Ansari',
   role: 'Full Stack Developer',
-  tagline: 'Building performant web applications end-to-end',
-  bio: 'I design and build robust web applications from the ground up — architecting APIs, crafting intuitive interfaces, and optimizing databases for scale. Passionate about clean architecture, developer experience, and shipping products that feel effortless.',
-  location: 'San Francisco, CA',
-  email: 'hello@alexrivera.dev',
-  photo: 'https://images.pexels.com/photos/14189629/pexels-photo-14189629.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  tagline: 'Building scalable and user-focused web applications',
+  bio: 'Full Stack Developer with 2+ years of experience building scalable web applications using React.js, Next.js, ASP.NET MVC, Node.js, and MSSQL. Experienced in developing responsive user interfaces, RESTful APIs, authentication systems, admin dashboards, and database-driven applications. Focused on clean architecture, performance optimization, and delivering reliable user experiences.',
+  location: 'India',
+  email: 'firozansari3712@gmail.com',
+  photo: developerImage,
   social: {
-    github: 'https://github.com',
-    linkedin: 'https://linkedin.com',
-    twitter: 'https://twitter.com',
+    github: 'https://github.com/Firoz2899',
+    linkedin: 'https://www.linkedin.com/in/firoz-alam-8a137b2b3/',
+    twitter: '',
   },
   stats: [
-    { label: 'Years Experience', value: '7+' },
-    { label: 'Projects Shipped', value: '50+' },
-    { label: 'Happy Clients', value: '30+' },
-    { label: 'GitHub Stars', value: '1.2k' },
+    { label: 'Years Experience', value: '2+' },
+    { label: 'Professional Projects', value: '5+' },
+    { label: 'Personal Projects', value: '2' },
+    { label: 'Primary Stack', value: 'Full Stack' },
   ],
 };
 
@@ -23,157 +25,132 @@ export const skills = [
   {
     category: 'Frontend',
     items: [
-      { name: 'React.js', level: 95 },
-      { name: 'Next.js', level: 92 },
-      { name: 'Tailwind CSS', level: 90 },
-      { name: 'TypeScript', level: 88 },
+      { name: 'React.js', level: 90 },
+      { name: 'Next.js', level: 80 },
+      { name: 'JavaScript', level: 90 },
+      { name: 'Tailwind CSS', level: 85 },
+      { name: 'Bootstrap', level: 80 },
+      { name: 'Redux Toolkit', level: 85 },
+      { name: 'Zustand', level: 80 },
+      { name: 'Context API', level: 80 },
     ],
   },
   {
     category: 'Backend',
     items: [
-      { name: 'Node.js', level: 93 },
-      { name: 'NestJS', level: 85 },
-      { name: 'ASP.NET MVC', level: 82 },
-      { name: '.NET Core', level: 80 },
+      { name: 'ASP.NET MVC', level: 90 },
+      { name: 'Node.js', level: 80 },
+      { name: 'Express.js', level: 80 },
     ],
   },
   {
     category: 'Databases',
     items: [
-      { name: 'MongoDB', level: 88 },
-      { name: 'PostgreSQL', level: 90 },
-      { name: 'MSSQL', level: 85 },
-      { name: 'Redis', level: 78 },
+      { name: 'MSSQL', level: 90 },
+      { name: 'MongoDB', level: 80 },
+      { name: 'Mongoose', level: 80 },
+      { name: 'Knex.js', level: 75 },
+    ],
+  },
+  {
+    category: 'Authentication & Tools',
+    items: [
+      { name: 'JWT Authentication', level: 85 },
+      { name: 'REST APIs', level: 90 },
+      { name: 'Git', level: 85 },
+      { name: 'Postman', level: 85 },
     ],
   },
 ];
 
 export const experience = [
   {
-    role: 'Senior Full Stack Developer',
-    company: 'TechFlow Inc.',
-    period: '2023 — Present',
+    role: 'React & Dot Net Developer',
+    company: 'Rnaura Technologies',
+    period: 'Feb 2024 — Present',
     description:
-      'Leading a team of 5 developers building a SaaS analytics platform. Architected the migration from a monolith to a NestJS microservices architecture, reducing page load times by 40%.',
-    tech: ['Next.js', 'NestJS', 'PostgreSQL', 'Redis'],
-  },
-  {
-    role: 'Full Stack Developer',
-    company: 'Digital Wave',
-    period: '2021 — 2023',
-    description:
-      'Developed and maintained multiple client web applications using React and Node.js. Built a custom CMS handling 200k+ daily requests with a 99.9% uptime SLA.',
-    tech: ['React.js', 'Node.js', 'MongoDB', 'AWS'],
-  },
-  {
-    role: 'Backend Developer',
-    company: 'CodeCraft Solutions',
-    period: '2019 — 2021',
-    description:
-      'Built RESTful APIs and microservices with .NET Core and ASP.NET MVC. Designed database schemas for high-transaction fintech applications processing millions of records.',
-    tech: ['.NET Core', 'ASP.NET MVC', 'MSSQL', 'Docker'],
-  },
-  {
-    role: 'Junior Developer',
-    company: 'StartHub Labs',
-    period: '2018 — 2019',
-    description:
-      'Started my professional journey building features for early-stage startups. Learned the importance of clean code, testing, and continuous deployment.',
-    tech: ['React.js', 'Node.js', 'PostgreSQL'],
+      'Developing and maintaining scalable React.js applications with MVC C# backends. Building RESTful APIs, secure admin dashboards, role-based permissions, responsive interfaces, and database-driven features using MSSQL.',
+    tech: ['React.js', 'ASP.NET MVC', 'C#', 'MSSQL', 'REST APIs'],
   },
 ];
 
 export const projects = [
   {
-    title: 'Nexus Analytics',
+    title: 'Rnaura',
     description:
-      'A real-time analytics dashboard processing millions of events daily. Features customizable widgets, live data streaming, and exportable reports.',
-    tech: ['Next.js', 'NestJS', 'PostgreSQL', 'Redis'],
+      'A full-fledged React.js web application with an MVC C# backend. Implemented separate Public and Admin themes with role-based authentication and an admin panel for managing content and users.',
+    tech: ['React.js', 'ASP.NET MVC', 'MSSQL'],
     gradient: 'from-cyan-500/20 to-blue-600/20',
-    demo: '#',
-    github: '#',
+    demo: 'https://rnaura.com/',
+    github: '',
     featured: true,
-    images: [
-      'https://images.pexels.com/photos/10020092/pexels-photo-10020092.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-      'https://images.pexels.com/photos/106344/pexels-photo-106344.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-      'https://images.pexels.com/photos/12969403/pexels-photo-12969403.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    ],
+    images: [],
   },
   {
-    title: 'DevFlow CMS',
+    title: 'Car Rental – Admin Panel',
     description:
-      'A headless CMS with a drag-and-drop page builder, multi-language support, and a plugin system. Handles 200k+ daily requests at 99.9% uptime.',
-    tech: ['React.js', 'Node.js', 'MongoDB'],
+      'Admin panel and backend APIs for a car rental booking application. Developed MVC C# and MSSQL APIs for mobile integration and implemented booking and user management functionality.',
+    tech: ['ASP.NET MVC', 'C#', 'MSSQL'],
     gradient: 'from-emerald-500/20 to-teal-600/20',
-    demo: '#',
-    github: '#',
+    demo: 'http://eaglecarrental.singhfarmfresh.in/',
+    github: '',
     featured: true,
-    images: [
-      'https://images.pexels.com/photos/14851420/pexels-photo-14851420.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-      'https://images.pexels.com/photos/3888149/pexels-photo-3888149.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-      'https://images.pexels.com/photos/8247921/pexels-photo-8247921.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    ],
+    images: [],
   },
   {
-    title: 'PayGate API',
+    title: 'Bharat Touch',
     description:
-      'A payment processing gateway supporting multiple providers with unified webhooks, idempotency keys, and fraud detection rules.',
-    tech: ['.NET Core', 'MSSQL', 'Docker'],
+      'A digital business card and NFC virtual card platform that allows users to create and manage personal and professional profiles. Worked across frontend and backend development, profile sharing, NFC functionality, and new application modules.',
+    tech: ['ASP.NET MVC', 'C#', 'MSSQL', 'NFC'],
+    gradient: 'from-violet-500/20 to-indigo-600/20',
+    demo: 'https://bharattouch.com',
+    github: '',
+    featured: true,
+    images: [],
+  },
+  {
+    title: 'Bonc Network',
+    description:
+      'An e-commerce platform for products and services. Developed new React.js frontend modules, enhanced the existing application, created an admin panel, and improved responsiveness and overall user experience.',
+    tech: ['React.js', 'ASP.NET MVC', 'MSSQL'],
     gradient: 'from-amber-500/20 to-orange-600/20',
-    demo: '#',
-    github: '#',
-    featured: false,
-    images: [
-      'https://images.pexels.com/photos/4841737/pexels-photo-4841737.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-      'https://images.pexels.com/photos/29502363/pexels-photo-29502363.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-      'https://images.pexels.com/photos/29502357/pexels-photo-29502357.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    ],
+    demo: 'https://www.boncnetwork.com/',
+    github: '',
+    featured: true,
+    images: [],
   },
   {
-    title: 'TaskPilot',
+    title: 'MyProBook',
     description:
-      'A project management tool with kanban boards, Gantt charts, real-time collaboration, and automated workflow triggers.',
-    tech: ['Next.js', 'NestJS', 'PostgreSQL'],
+      'A business marketplace platform with business listings, profile management, and marketplace features. Developed REST APIs using ASP.NET MVC and SQL Server, built frontend modules using Next.js and Zustand, and enhanced existing React.js admin modules.',
+    tech: ['Next.js', 'React.js', 'ASP.NET MVC', 'MSSQL', 'Zustand'],
+    gradient: 'from-sky-500/20 to-cyan-600/20',
+    demo: 'https://myprobook.com/',
+    github: '',
+    featured: true,
+    images: [],
+  },
+  {
+    title: 'Portfolio Backend API',
+    description:
+      'A modular REST API built with Node.js, Express.js, MongoDB, Mongoose, and JWT authentication. Includes authentication, profile management, file uploads, validation, reusable utilities, middleware, and a scalable backend architecture.',
+    tech: ['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'JWT'],
     gradient: 'from-rose-500/20 to-pink-600/20',
     demo: '#',
-    github: '#',
+    github: 'https://github.com/Firoz2899/my-portfolio-backend',
     featured: false,
-    images: [
-      'https://images.pexels.com/photos/38888656/pexels-photo-38888656.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-      'https://images.pexels.com/photos/6804093/pexels-photo-6804093.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-      'https://images.pexels.com/photos/38888681/pexels-photo-38888681.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    ],
+    images: [],
   },
   {
-    title: 'CodeQuiz Arena',
+    title: 'Portfolio Frontend',
     description:
-      'An interactive coding challenge platform with live code execution, leaderboards, and a custom test-case runner backed by Docker.',
-    tech: ['React.js', 'Node.js', 'MongoDB'],
+      'A responsive portfolio application built with React.js and TypeScript. Demonstrates reusable component architecture, Redux Toolkit state management, Tailwind CSS, responsive design, and API integration.',
+    tech: ['React.js', 'TypeScript', 'Redux Toolkit', 'Tailwind CSS'],
     gradient: 'from-violet-500/20 to-indigo-600/20',
     demo: '#',
-    github: '#',
+    github: 'https://github.com/Firoz2899/portfolio-frontend',
     featured: false,
-    images: [
-      'https://images.pexels.com/photos/1102797/pexels-photo-1102797.png?auto=compress&cs=tinysrgb&h=650&w=940',
-      'https://images.pexels.com/photos/4439901/pexels-photo-4439901.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-      'https://images.pexels.com/photos/7325498/pexels-photo-7325498.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    ],
-  },
-  {
-    title: 'InsightHub',
-    description:
-      'A data visualization tool that transforms raw CSV uploads into interactive dashboards with filtering, grouping, and predictive trend lines.',
-    tech: ['React.js', '.NET Core', 'MSSQL'],
-    gradient: 'from-sky-500/20 to-cyan-600/20',
-    demo: '#',
-    github: '#',
-    featured: false,
-    images: [
-      'https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-      'https://images.pexels.com/photos/38808473/pexels-photo-38808473.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-      'https://images.pexels.com/photos/6366444/pexels-photo-6366444.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    ],
+    images: [],
   },
 ];
 
@@ -182,95 +159,88 @@ export const services = [
     icon: 'Code2',
     title: 'Web Application Development',
     description:
-      'End-to-end development of responsive, performant web applications using modern frameworks and best practices.',
+      'Building responsive and scalable web applications using React.js, Next.js, ASP.NET MVC, and Node.js.',
   },
   {
     icon: 'Server',
-    title: 'API Design & Architecture',
+    title: 'REST API Development',
     description:
-      'Designing scalable RESTful and GraphQL APIs with clean architecture, authentication, and thorough documentation.',
-  },
-  {
-    icon: 'Database',
-    title: 'Database Optimization',
-    description:
-      'Schema design, query optimization, and migration strategies for SQL and NoSQL databases to handle scale.',
+      'Designing and developing RESTful APIs using ASP.NET MVC, Node.js, and Express.js with clean and reusable architecture.',
   },
   {
     icon: 'LayoutDashboard',
-    title: 'UI/UX Implementation',
+    title: 'Admin Dashboard Development',
     description:
-      'Translating Figma designs into pixel-perfect, accessible, and animated interfaces with Tailwind CSS.',
+      'Developing responsive admin panels with content management, user management, role-based permissions, and business workflows.',
   },
   {
-    icon: 'Cloud',
-    title: 'DevOps & Deployment',
+    icon: 'Database',
+    title: 'Database Development',
     description:
-      'CI/CD pipelines, Docker containerization, and cloud deployment on AWS, Vercel, and DigitalOcean.',
+      'Working with MSSQL and MongoDB to build database-driven applications, integrate APIs, and optimize database queries.',
   },
   {
-    icon: 'Search',
-    title: 'Code Review & Mentoring',
+    icon: 'ShieldCheck',
+    title: 'Authentication & Authorization',
     description:
-      'Thorough code reviews, architectural guidance, and mentoring junior developers on best practices.',
+      'Implementing JWT authentication, role-based permissions, and secure user access across web applications and APIs.',
+  },
+  {
+    icon: 'Smartphone',
+    title: 'Responsive UI Development',
+    description:
+      'Creating responsive and user-friendly interfaces using React.js, Tailwind CSS, Bootstrap, and modern frontend practices.',
   },
 ];
 
 export const techStack = [
   { name: 'React.js', icon: 'Atom' },
   { name: 'Next.js', icon: 'Triangle' },
-  { name: 'Node.js', icon: 'Hexagon' },
-  { name: 'NestJS', icon: 'Boxes' },
-  { name: 'ASP.NET MVC', icon: 'Code2' },
-  { name: '.NET Core', icon: 'FileCode' },
-  { name: 'MongoDB', icon: 'Database' },
-  { name: 'MSSQL', icon: 'Database' },
-  { name: 'PostgreSQL', icon: 'Database' },
+  { name: 'JavaScript', icon: 'Braces' },
   { name: 'TypeScript', icon: 'Braces' },
+  { name: 'Node.js', icon: 'Hexagon' },
+  { name: 'Express.js', icon: 'Server' },
+  { name: 'ASP.NET MVC', icon: 'Code2' },
+  { name: 'C#', icon: 'FileCode' },
+  { name: 'MongoDB', icon: 'Database' },
+  { name: 'Mongoose', icon: 'Database' },
+  { name: 'MSSQL', icon: 'Database' },
+  { name: 'Knex.js', icon: 'Database' },
+  { name: 'Redux Toolkit', icon: 'Boxes' },
+  { name: 'Zustand', icon: 'Boxes' },
   { name: 'Tailwind CSS', icon: 'Palette' },
-  { name: 'Docker', icon: 'Container' },
-  { name: 'AWS', icon: 'Cloud' },
-  { name: 'Redis', icon: 'Zap' },
-  { name: 'GraphQL', icon: 'Share2' },
+  { name: 'Bootstrap', icon: 'Palette' },
+  { name: 'JWT', icon: 'ShieldCheck' },
   { name: 'Git', icon: 'GitBranch' },
+  { name: 'Postman', icon: 'Send' },
+  { name: 'REST APIs', icon: 'Globe' },
 ];
 
 export const githubActivity = {
-  username: 'alexrivera',
-  totalCommits: 2847,
-  totalRepos: 64,
-  totalStars: 1240,
-  totalPRs: 312,
-  contributionGraph: [
-    0, 1, 0, 2, 1, 0, 0, 3, 2, 1, 0, 1, 4, 0,
-    1, 2, 3, 1, 0, 2, 1, 0, 3, 5, 2, 1, 0, 1,
-    0, 1, 4, 2, 3, 1, 0, 2, 1, 3, 0, 1, 2, 0,
-    3, 2, 1, 0, 4, 3, 2, 1, 0, 2, 3, 1, 0, 1,
-    1, 0, 2, 3, 4, 2, 1, 0, 3, 2, 1, 4, 2, 0,
-    2, 3, 1, 0, 1, 2, 3, 4, 2, 1, 0, 3, 1, 2,
-    0, 1, 2, 3, 4, 3, 2, 1, 0, 2, 1, 3, 2, 0,
-    3, 4, 2, 1, 0, 2, 3, 1, 4, 2, 0, 1, 3, 2,
-    1, 0, 2, 3, 4, 2, 1, 0, 3, 2, 4, 1, 0, 2,
-    2, 3, 1, 0, 4, 2, 3, 1, 0, 2, 1, 3, 4, 2,
-    0, 1, 2, 3, 4, 2, 1, 0, 3, 2, 1, 4, 2, 0,
-    3, 2, 1, 0, 4, 3, 2, 1, 0, 2, 3, 4, 1, 2,
-  ],
+  username: 'Firoz2899',
+  show: false, // Set to true to display GitHub activity section
+
+  // These values are intentionally not fabricated because
+  // the resume does not provide GitHub statistics.
+  totalCommits: 0,
+  totalRepos: 0,
+  totalStars: 0,
+  totalPRs: 0,
+
+  contributionGraph: [],
+
   recentRepos: [
-    { name: 'nexus-analytics', stars: 234, forks: 45, language: 'TypeScript' },
-    { name: 'devflow-cms', stars: 189, forks: 32, language: 'TypeScript' },
-    { name: 'paygate-api', stars: 156, forks: 28, language: 'C#' },
-    { name: 'taskpilot', stars: 142, forks: 21, language: 'TypeScript' },
+    {
+      name: 'portfolio-frontend',
+      stars: 0,
+      forks: 0,
+      language: 'TypeScript',
+    },
+    {
+      name: 'my-portfolio-backend',
+      stars: 0,
+      forks: 0,
+      language: 'JavaScript',
+    },
   ],
 };
-
-export const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Services', href: '#services' },
-  { label: 'Tech Stack', href: '#tech-stack' },
-  { label: 'GitHub', href: '#github' },
-  { label: 'Contact', href: '#contact' },
-] as const;

@@ -10,6 +10,7 @@ type ProjectCardProps = {
   github: string;
   featured?: boolean;
   index: number;
+  haveScreenshots: boolean;
   onOpenSlider: () => void;
 };
 
@@ -21,9 +22,16 @@ export default function ProjectCard({
   demo,
   github,
   featured,
+  haveScreenshots,
   index,
   onOpenSlider,
 }: ProjectCardProps) {
+
+  const showGithub = github && github.trim() !== '';
+  const showDemo = demo && demo.trim() !== '';
+
+  const showActions = showGithub || showDemo || haveScreenshots;
+
   return (
     <ScrollReveal
       delay={index * 80}
@@ -71,33 +79,49 @@ export default function ProjectCard({
           </div>
 
           {/* Action buttons */}
-          <div className="flex flex-wrap items-center gap-3">
-            <a
-              href={demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-accent-500 to-accent-400 px-4 py-2 text-sm font-medium text-ink-950 transition-all hover:shadow-lg hover:shadow-accent-500/20 hover:-translate-y-0.5"
-            >
-              <ExternalLink className="h-4 w-4" />
-              Live Demo
-            </a>
-            <a
-              href={github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-medium text-ink-100 transition-all hover:border-accent-400/30 hover:bg-accent-400/5 hover:-translate-y-0.5"
-            >
-              <Github className="h-4 w-4" />
-              GitHub
-            </a>
-            <button
-              onClick={onOpenSlider}
-              className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-medium text-ink-100 transition-all hover:border-signal/30 hover:bg-signal/5 hover:-translate-y-0.5"
-            >
-              <Images className="h-4 w-4" />
-              Screenshots
-            </button>
-          </div>
+          {
+            showActions && (
+              <div className="flex flex-wrap items-center gap-3">
+                {
+                  showDemo && (
+                    <a
+                      href={demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-accent-500 to-accent-400 px-4 py-2 text-sm font-medium text-ink-950 transition-all hover:shadow-lg hover:shadow-accent-500/20 hover:-translate-y-0.5"
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                      Live Demo
+                    </a>
+                  )
+                }
+                {
+                  showGithub && (
+                    <a
+                      href={github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-medium text-ink-100 transition-all hover:border-accent-400/30 hover:bg-accent-400/5 hover:-translate-y-0.5"
+                    >
+                      <Github className="h-4 w-4" />
+                      GitHub
+                    </a>
+                  )
+                }
+                {
+                  haveScreenshots && (
+                    <button
+                      onClick={onOpenSlider}
+                      className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-medium text-ink-100 transition-all hover:border-signal/30 hover:bg-signal/5 hover:-translate-y-0.5"
+                    >
+                      <Images className="h-4 w-4" />
+                      Screenshots
+                    </button>
+                  )
+                }
+              </div>
+            )
+          }
         </div>
       </div>
     </ScrollReveal>
