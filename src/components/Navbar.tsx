@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { navLinks } from '@/data/portfolio';
-import type { NavHref } from '@/types/portfolio'
+import ThemeToggle from '@/components/ui/ThemeToggle';
+import { useTheme } from '@/hooks/useTheme';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState<NavHref>('#home');
+  const [activeSection, setActiveSection] = useState('#home');
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => {
@@ -22,16 +24,9 @@ export default function Navbar() {
       if (current) setActiveSection(current);
     };
 
-    const abortController = new AbortController();
-
-    window.addEventListener(
-        'scroll', 
-        onScroll, 
-        { passive: true, signal: abortController.signal }
-    );
+    window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
-    
-    return () => abortController.abort();
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   const handleNavClick = (href: string) => {
@@ -49,7 +44,7 @@ export default function Navbar() {
             : 'bg-transparent py-5'
         }`}
       >
-        <div className="section-pad flex items-center justify-between">
+        <div className="section-pad flex items-center justify-between gap-4">
           {/* Logo */}
           <a
             href="#home"
@@ -59,7 +54,7 @@ export default function Navbar() {
             }}
             className="flex items-center gap-2 font-mono text-lg font-bold text-white"
           >
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent-500 to-signal text-ink-950">
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent-500 to-signal text-on-accent">
               AR
             </span>
             <span className="hidden sm:inline">alex<span className="text-accent-400">.</span>dev</span>
@@ -86,26 +81,29 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA */}
-          <a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('#contact');
-            }}
-            className="hidden lg:inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-accent-500 to-accent-400 px-5 py-2.5 text-sm font-semibold text-ink-950 transition-all hover:shadow-lg hover:shadow-accent-500/25 hover:-translate-y-0.5"
-          >
-            Let's Talk
-          </a>
+          {/* Right side: theme + CTA + mobile toggle */}
+          <div className="flex items-center gap-2.5">
+            <ThemeToggle theme={theme} setTheme={setTheme} />
 
-          {/* Mobile toggle */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden flex items-center justify-center h-10 w-10 rounded-lg border border-white/10 bg-white/5 text-white"
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('#contact');
+              }}
+              className="hidden lg:inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-accent-500 to-accent-400 px-5 py-2.5 text-sm font-semibold text-on-accent transition-all hover:shadow-lg hover:shadow-accent-500/25 hover:-translate-y-0.5"
+            >
+              Let's Talk
+            </a>
+
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="lg:hidden flex items-center justify-center h-10 w-10 rounded-lg border border-white/10 bg-white/5 text-white"
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -148,7 +146,7 @@ export default function Navbar() {
                 e.preventDefault();
                 handleNavClick('#contact');
               }}
-              className="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-accent-500 to-accent-400 px-5 py-3 text-sm font-semibold text-ink-950"
+              className="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-accent-500 to-accent-400 px-5 py-3 text-sm font-semibold text-on-accent"
             >
               Let's Talk
             </a>

@@ -1,10 +1,126 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/*---------------------------------------------New Css File---------------------------------------------*/
+
+/* ===== DARK THEME (default) ===== */
+:root,
+.dark {
+  --ink-950: 8 9 12;
+  --ink-900: 12 14 19;
+  --ink-850: 16 18 24;
+  --ink-800: 21 24 35;
+  --ink-700: 28 32 48;
+  --ink-600: 38 43 61;
+  --ink-500: 58 64 85;
+  --ink-400: 90 97 120;
+  --ink-300: 138 145 168;
+  --ink-200: 184 190 204;
+  --ink-100: 223 227 234;
+
+  --overlay: 255 255 255;
+  --on-accent: 8 9 12;
+
+  --accent: 34 211 238;
+  --accent-300: 103 232 249;
+  --accent-400: 34 211 238;
+  --accent-500: 6 182 212;
+
+  --signal: 52 211 153;
+
+  --grid-line: rgba(255,255,255,0.025);
+  --scrollbar-track: #0c0e13;
+  --scrollbar-thumb-from: #22d3ee;
+  --scrollbar-thumb-to: #0891b2;
+  --scrollbar-thumb-hover-from: #67e8f9;
+  --scrollbar-thumb-hover-to: #22d3ee;
+}
+
+/* ===== LIGHT THEME ===== */
+.light {
+  --ink-950: 248 250 252;
+  --ink-900: 241 245 249;
+  --ink-850: 238 242 247;
+  --ink-800: 241 245 249;
+  --ink-700: 226 232 240;
+  --ink-600: 203 213 225;
+  --ink-500: 148 163 184;
+  --ink-400: 100 116 139;
+  --ink-300: 71 85 105;
+  --ink-200: 51 65 85;
+  --ink-100: 30 41 59;
+
+  --overlay: 15 23 42;
+  --on-accent: 255 255 255;
+
+  --accent: 8 145 178;
+  --accent-300: 14 116 144;
+  --accent-400: 8 145 178;
+  --accent-500: 6 182 212;
+
+  --signal: 5 150 105;
+
+  --grid-line: rgba(0,0,0,0.04);
+  --scrollbar-track: #e2e8f0;
+  --scrollbar-thumb-from: #06b6d4;
+  --scrollbar-thumb-to: #0e7490;
+  --scrollbar-thumb-hover-from: #22d3ee;
+  --scrollbar-thumb-hover-to: #06b6d4;
+}
+
 @layer base {
+  :root {
+    /* Light theme */
+    --ink-950: 248 250 252;
+    --ink-900: 241 245 249;
+    --ink-850: 248 250 252;
+    --ink-800: 226 232 240;
+    --ink-700: 203 213 225;
+    --ink-600: 148 163 184;
+    --ink-500: 100 116 139;
+    --ink-400: 71 85 105;
+    --ink-300: 51 65 85;
+    --ink-200: 30 41 59;
+    --ink-100: 15 23 42;
+
+    --overlay: 15 23 42;
+    --on-accent: 255 255 255;
+
+    --accent: 8 145 178;
+    --accent-300: 14 116 144;
+    --accent-400: 8 145 178;
+    --accent-500: 6 182 212;
+
+    --signal: 5 150 105;
+  }
+
+  .dark {
+    /* Dark theme */
+    --ink-950: 12 14 19;
+    --ink-900: 18 21 28;
+    --ink-850: 23 27 35;
+    --ink-800: 30 35 45;
+    --ink-700: 45 52 65;
+    --ink-600: 71 82 99;
+    --ink-500: 100 116 139;
+    --ink-400: 148 163 184;
+    --ink-300: 203 213 225;
+    --ink-200: 226 232 240;
+    --ink-100: 248 250 252;
+
+    --overlay: 255 255 255;
+    --on-accent: 12 14 19;
+
+    --accent: 34 211 238;
+    --accent-300: 103 232 249;
+    --accent-400: 34 211 238;
+    --accent-500: 6 182 212;
+
+    --signal: 16 185 129;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -36,7 +152,7 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-accent-500 to-accent-400 px-6 py-3 font-medium text-ink-950 transition-all duration-300 hover:shadow-lg hover:shadow-accent-500/25 hover:-translate-y-0.5;
+    @apply inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-accent-500 to-accent-400 px-6 py-3 font-medium text-on-accent transition-all duration-300 hover:shadow-lg hover:shadow-accent-500/25 hover:-translate-y-0.5;
   }
 
   .btn-ghost {
@@ -49,26 +165,26 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0c0e13;
+  /* background: var(--scrollbar-track); */
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #22d3ee, #0891b2);
+  background: linear-gradient(to bottom, var(--scrollbar-thumb-from), var(--scrollbar-thumb-to));
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #67e8f9, #22d3ee);
+  background: linear-gradient(to bottom, var(--scrollbar-thumb-hover-from), var(--scrollbar-thumb-hover-to));
 }
 
 /* Grid background utility */
 .bg-grid {
   background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 
 .bg-dots {
-  background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-image: radial-gradient(var(--grid-line) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
@@ -80,3 +196,6 @@
   pointer-events: none;
   z-index: 0;
 }
+
+
+/*---------------------------------------------New Css File End---------------------------------------------*/
