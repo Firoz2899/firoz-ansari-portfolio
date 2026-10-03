@@ -1,5 +1,7 @@
-import { ArrowDown, Github, Linkedin, Twitter, Sparkles } from 'lucide-react';
+import { ArrowDown, Sparkles } from 'lucide-react';
 import { profile } from '@/data/portfolio';
+import { socials } from '../SocialLinks';
+import { Typewriter } from 'react-simple-typewriter';
 
 export default function Hero() {
   return (
@@ -52,8 +54,16 @@ export default function Hero() {
         </h2>
 
         {/* Tagline */}
-        <p className="max-w-2xl mx-auto text-ink-300 text-lg md:text-xl leading-relaxed mb-10 animate-fade-up" style={{ animationDelay: '0.35s' }}>
-          {profile.tagline}. {profile.bio}
+        <p className="mb-7 min-h-[28px] text-base font-semibold text-gold md:text-lg animate-fade-up" style={{ animationDelay: '0.25s' }}>
+          <Typewriter
+            words={profile.tagline}
+            loop={0}
+            cursor
+            cursorStyle="|"
+            typeSpeed={70}
+            deleteSpeed={40}
+            delaySpeed={1800}
+          />
         </p>
 
         {/* CTAs */}
@@ -69,11 +79,7 @@ export default function Hero() {
 
         {/* Social icons */}
         <div className="flex items-center justify-center gap-4 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-          {[
-            { icon: Github, href: profile.social.github, label: 'GitHub' },
-            { icon: Linkedin, href: profile.social.linkedin, label: 'LinkedIn' },
-            { icon: Twitter, href: profile.social.twitter, label: 'Twitter' },
-          ].map(({ icon: Icon, href, label }) => (
+          {socials.filter(x => x.show).map(({ icon: Icon, href, label }) => (
             <a
               key={label}
               href={href}

@@ -27,7 +27,7 @@ export default function Footer() {
 
           {/* Quick links */}
           <div className="flex flex-wrap gap-x-6 gap-y-2">
-            {navLinks.map((link) => (
+            {navLinks.filter(x => x.show).map((link) => (
               <a
                 key={link.href}
                 href={link.href}

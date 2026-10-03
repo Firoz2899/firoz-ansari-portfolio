@@ -1,25 +1,76 @@
-import { useState } from 'react';
-import { Mail, MapPin, Send, CheckCircle2 } from 'lucide-react';
+import { useRef, useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { Mail, MapPin, Send, CheckCircle2, Phone } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { socials } from '@/components/SocialLinks';
 import { profile } from '@/data/portfolio';
+import { sendEmail } from '@/Services/email/sendEmail';
+import { config } from '@/utils/config';
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
   const [sent, setSent] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const captchaRef = useRef<ReCAPTCHA>(null);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent(true);
-    setTimeout(() => {
-      setSent(false);
-      setForm({ name: '', email: '', message: '' });
-    }, 3500);
+
+    setError('');
+
+    if (!captchaToken) {
+      setError('Please complete the reCAPTCHA verification.');
+      return;
+    }
+
+    try {
+        setSending(true);
+
+        await sendEmail.sendContactEmail({
+          from_name: form.name,
+          from_email: form.email,
+          from_phone_number: form.phone,
+          subject: 'New Portfolio Contact',
+          message: form.message,
+
+          // Important:
+          'g-recaptcha-response': captchaToken,
+        });
+
+        setSent(true);
+
+        setForm({
+          name: '',
+          email: '',
+          phone: '',
+          message: '',
+        });
+
+        // Reset reCAPTCHA
+        captchaRef.current?.reset();
+        setCaptchaToken(null);
+
+        setTimeout(() => {
+          setSent(false);
+        }, 3500);
+      } catch (error) {
+        console.error('Email sending failed:', error);
+
+        setError(
+          'Unable to send your message. Please try again.'
+        );
+      } finally {
+        setSending(false);
+      }
+      
   };
 
   const contactInfo = [
     { icon: Mail, label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
+    { icon: Phone, label: 'Phone', value: profile.phone, href: `tel:${profile.phone}` },
     { icon: MapPin, label: 'Location', value: profile.location, href: '#' },
   ];
 
@@ -119,6 +170,25 @@ export default function Contact() {
 
                 <div>
                   <label className="block text-sm font-medium text-ink-200 mb-2">
+                    Phone Number
+                  </label>
+
+                  <input
+                    type="tel"
+                    value={form.phone}
+                    onChange={(e) =>
+                      setForm({
+                        ...form,
+                        phone: e.target.value,
+                      })
+                    }
+                    placeholder="+91 98765 43210"
+                    className="w-full rounded-xl bg-white/[0.03] border border-white/8 px-4 py-3 text-sm text-white placeholder:text-ink-400 outline-none transition-all focus:border-accent-400/40 focus:bg-white/[0.05]"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-ink-200 mb-2">
                     Message
                   </label>
                   <textarea
@@ -130,20 +200,52 @@ export default function Contact() {
                     className="w-full rounded-xl bg-white/[0.03] border border-white/8 px-4 py-3 text-sm text-white placeholder:text-ink-400 outline-none transition-all focus:border-accent-400/40 focus:bg-white/[0.05] resize-none"
                   />
                 </div>
+                
+                <div className="pt-2">
+                  <ReCAPTCHA
+                    ref={captchaRef}
+                    sitekey={config.captchaSiteKey}
+                    onChange={(token) => {
+                      setCaptchaToken(token);
+                      setError('');
+                    }}
+                    onExpired={() => {
+                      setCaptchaToken(null);
+                    }}
+                    onErrored={() => {
+                      setCaptchaToken(null);
+                      setError(
+                        'reCAPTCHA failed to load. Please try again.'
+                      );
+                    }}
+                  />
+                </div>
+
+                {error && (
+                  <p className="text-sm text-red-400">
+                    {error}
+                  </p>
+                )}
 
                 <button
                   type="submit"
-                  disabled={sent}
+                  disabled={sending || sent}
                   className={`w-full inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-medium transition-all ${
                     sent
                       ? 'bg-signal/20 border border-signal/30 text-signal'
-                      : 'bg-gradient-to-r from-accent-500 to-accent-400 text-ink-950 hover:shadow-lg hover:shadow-accent-500/25 hover:-translate-y-0.5'
+                      : sending
+                        ? 'bg-accent-500/50 text-ink-950 cursor-not-allowed'
+                        : 'bg-gradient-to-r from-accent-500 to-accent-400 text-ink-950 hover:shadow-lg hover:shadow-accent-500/25 hover:-translate-y-0.5'
                   }`}
                 >
                   {sent ? (
                     <>
                       <CheckCircle2 className="h-5 w-5" />
-                      Message sent! I'll get back to you soon.
+                      Message sent!
+                    </>
+                  ) : sending ? (
+                    <>
+                      Sending...
                     </>
                   ) : (
                     <>
@@ -152,6 +254,7 @@ export default function Contact() {
                     </>
                   )}
                 </button>
+
               </div>
             </form>
           </ScrollReveal>

@@ -1,12 +1,29 @@
 import developerImage from "@/assets/images/Developer-Image.jpg"
+import BookingListImg from "@/assets/images/projects/CarRental/BookingList.png"
+import CalendarViewImg from "@/assets/images/projects/CarRental/CalendarView.png"
+import DashboardImg from "@/assets/images/projects/CarRental/Dashboard.png"
+import EditScreenImg from "@/assets/images/projects/Bharattouch/EditScreen.png"
+import ProfileTemplateImg from "@/assets/images/projects/Bharattouch/ProfileTemplate.png"
+import Profile2Img from "@/assets/images/projects/Bharattouch/profile-2.png"
+// import ProfileImg from "@/assets/images/projects/Bharattouch/profile.png"
 
 export const profile = {
   name: 'Firoz Ansari',
   role: 'Full Stack Developer',
-  tagline: 'Building scalable and user-focused web applications',
-  bio: 'Full Stack Developer with 2+ years of experience building scalable web applications using React.js, Next.js, ASP.NET MVC, Node.js, and MSSQL. Experienced in developing responsive user interfaces, RESTful APIs, authentication systems, admin dashboards, and database-driven applications. Focused on clean architecture, performance optimization, and delivering reliable user experiences.',
+  tagline: [
+    'Building scalable web applications',
+    'Crafting responsive React interfaces',
+    'Developing robust REST APIs',
+    'Building database-driven applications',
+    'Turning ideas into working products',
+  ],
+  bio: [
+    `I'm a Full Stack Developer with 2+ years of experience building scalable web applications using React.js, Next.js, ASP.NET MVC (C#), Node.js, and MSSQL. I work across both frontend and backend development, building responsive interfaces, RESTful APIs, authentication systems, admin dashboards, and database-driven applications.`,
+    `In my professional experience, I've worked on applications including business platforms, e-commerce systems, car rental solutions, digital profile/NFC platforms, and marketplace applications. I've worked with both existing enterprise applications and new modules, focusing on responsive UI, API development, database integration, role-based permissions, and performance improvements.`
+  ],
   location: 'India',
   email: 'firozansari3712@gmail.com',
+  phone: '+91 8198953511',
   photo: developerImage,
   social: {
     github: 'https://github.com/Firoz2899',
@@ -95,7 +112,11 @@ export const projects = [
     demo: 'http://eaglecarrental.singhfarmfresh.in/',
     github: '',
     featured: true,
-    images: [],
+    images: [
+      BookingListImg,
+      CalendarViewImg,
+      DashboardImg,
+    ],
   },
   {
     title: 'Bharat Touch',
@@ -106,7 +127,12 @@ export const projects = [
     demo: 'https://bharattouch.com',
     github: '',
     featured: true,
-    images: [],
+    images: [
+      // ProfileImg,
+      Profile2Img,
+      EditScreenImg,
+      ProfileTemplateImg,
+    ],
   },
   {
     title: 'Bonc Network',

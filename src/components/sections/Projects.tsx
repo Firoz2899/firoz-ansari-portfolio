@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FolderGit2 } from 'lucide-react';
+// import { FolderGit2 } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ProjectCard from '@/components/ui/ProjectCard';
 import ImageSliderModal from '@/components/ui/ImageSliderModal';
@@ -50,7 +50,7 @@ export default function Projects() {
         </div>
 
         {/* View more */}
-        <div className="mt-12 flex justify-center">
+        {/* <div className="mt-12 flex justify-center">
           <a
             href="https://github.com"
             target="_blank"
@@ -60,7 +60,7 @@ export default function Projects() {
             <FolderGit2 className="h-4 w-4" />
             View all repositories on GitHub
           </a>
-        </div>
+        </div> */}
       </div>
 
       {/* Image slider modal */}

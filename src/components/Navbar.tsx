@@ -55,9 +55,9 @@ export default function Navbar() {
             className="flex items-center gap-2 font-mono text-lg font-bold text-white"
           >
             <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent-500 to-signal text-on-accent">
-              AR
+              FA
             </span>
-            <span className="hidden sm:inline">alex<span className="text-accent-400">.</span>dev</span>
+            <span className="hidden sm:inline">firoz<span className="text-accent-400">.</span>dev</span>
           </a>
 
           {/* Desktop nav */}

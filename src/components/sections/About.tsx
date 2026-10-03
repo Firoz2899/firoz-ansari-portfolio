@@ -1,4 +1,4 @@
-import { Briefcase, MapPin, Coffee, Award } from 'lucide-react';
+import { MapPin, Coffee, Award, Code2, BadgeCheck } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { profile } from '@/data/portfolio';
@@ -67,27 +67,43 @@ export default function About() {
                   </div>
                   <h3 className="text-xl font-semibold text-white">My Story</h3>
                 </div>
-                <p className="text-ink-200 leading-relaxed text-[15px] mb-4">
-                  {profile.bio}
-                </p>
-                <p className="text-ink-300 leading-relaxed text-[15px]">
-                  With over 7 years of experience across the full stack, I've worked
-                  with startups and enterprises alike — from building MVPs that
-                  scaled to millions of users, to architecting microservices that
-                  process thousands of requests per second. My toolkit spans the
-                  JavaScript and .NET ecosystems, and I'm equally comfortable in
-                  a terminal as I am in a design review.
-                </p>
+                {
+                  profile.bio.map((bio, idx) => {
+                    const className = idx === profile.bio.length - 1 ? '' : 'mb-4'
+                    const isEven = idx % 2 === 0
+                    return (
+                      <p key={`bio-${idx}`} className={`${isEven ? "text-ink-200" : "text-ink-300"} leading-relaxed text-[15px] ${className}`}>
+                        {bio}
+                      </p>
+                    )
+                  })
+                }
 
                 <div className="mt-6 flex flex-wrap gap-3">
                   <div className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/5 px-4 py-2">
                     <MapPin className="h-4 w-4 text-accent-400" />
                     <span className="text-sm text-ink-200">{profile.location}</span>
                   </div>
-                  <div className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/5 px-4 py-2">
-                    <Briefcase className="h-4 w-4 text-signal" />
-                    <span className="text-sm text-ink-200">Freelance & Full-time</span>
-                  </div>
+                   {/* Role */}
+                    <div className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/5 px-4 py-2">
+                      <Code2 className="h-4 w-4 text-signal" />
+                      <span className="text-sm text-ink-200">
+                        Full Stack Developer
+                      </span>
+                    </div>
+
+                    {/* Experience */}
+                    <div className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/5 px-4 py-2">
+                      <BadgeCheck className="h-4 w-4 text-signal" />
+                      <span className="text-sm text-ink-200">
+                        2+ Years Experience
+                      </span>
+                    </div>
+
+                    {/* <div className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/5 px-4 py-2">
+                      <Briefcase className="h-4 w-4 text-signal" />
+                      <span className="text-sm text-ink-200">Freelance & Full-time</span>
+                    </div> */}
                 </div>
               </div>
             </ScrollReveal>
