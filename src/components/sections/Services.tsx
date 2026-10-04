@@ -15,7 +15,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 export default function Services() {
   return (
-    <section id="services" className="relative section-pad py-24 md:py-32">
+    <section id="services" className="relative section-pad py-8 md:py-12">
       <div className="max-w-6xl mx-auto">
         <SectionHeading
           eyebrow="Services"

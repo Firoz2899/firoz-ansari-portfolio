@@ -1,11 +1,12 @@
-import { MapPin, Coffee, Award, Code2, BadgeCheck } from 'lucide-react';
+import { Coffee, Award } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { profile } from '@/data/portfolio';
 
 export default function About() {
+  const AboutStats = profile.stats.filter((stat) => stat.label.trim().length > 0);
   return (
-    <section id="about" className="relative section-pad py-24 md:py-32">
+    <section id="about" className="relative section-pad py-8 md:py-12">
       <div className="glow-orb h-[300px] w-[300px] bg-accent-500/5 top-1/3 right-[-100px]" />
 
       <div className="max-w-6xl mx-auto">
@@ -80,37 +81,23 @@ export default function About() {
                 }
 
                 <div className="mt-6 flex flex-wrap gap-3">
-                  <div className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/5 px-4 py-2">
-                    <MapPin className="h-4 w-4 text-accent-400" />
-                    <span className="text-sm text-ink-200">{profile.location}</span>
-                  </div>
-                   {/* Role */}
-                    <div className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/5 px-4 py-2">
-                      <Code2 className="h-4 w-4 text-signal" />
-                      <span className="text-sm text-ink-200">
-                        Full Stack Developer
-                      </span>
-                    </div>
-
-                    {/* Experience */}
-                    <div className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/5 px-4 py-2">
-                      <BadgeCheck className="h-4 w-4 text-signal" />
-                      <span className="text-sm text-ink-200">
-                        2+ Years Experience
-                      </span>
-                    </div>
-
-                    {/* <div className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/5 px-4 py-2">
-                      <Briefcase className="h-4 w-4 text-signal" />
-                      <span className="text-sm text-ink-200">Freelance & Full-time</span>
-                    </div> */}
+                  {
+                    profile.storyBadges.map(({label, icon: Icon, iconColor}) => (
+                      <div className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/5 px-4 py-2">
+                        <Icon className={`h-4 w-4 ${iconColor}`} />
+                        <span className="text-sm text-ink-200">
+                          {label}
+                        </span>
+                      </div>
+                    ))
+                  }
                 </div>
               </div>
             </ScrollReveal>
 
             {/* Stats grid */}
             <div className="grid grid-cols-2 gap-4">
-              {profile.stats.map((stat, i) => (
+              {AboutStats.map((stat, i) => (
                 <ScrollReveal key={stat.label} delay={150 + i * 80}>
                   <div className="glass-card p-5 h-full flex flex-col items-center justify-center text-center transition-all hover:border-accent-400/20 hover:-translate-y-1">
                     <Award className="h-5 w-5 text-gold mb-3" />

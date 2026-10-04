@@ -3,6 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { navLinks } from '@/components/NavLinks';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 import { useTheme } from '@/hooks/useTheme';
+import { profile } from '@/data/portfolio';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -54,10 +55,17 @@ export default function Navbar() {
             }}
             className="flex items-center gap-2 font-mono text-lg font-bold text-white"
           >
+            {/* <span className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg">
+              <img
+                src="/favicon.svg"
+                alt="FA"
+                className="h-full w-full object-cover"
+              />
+            </span> */}
             <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent-500 to-signal text-on-accent">
-              FA
+              {profile.name.map(x => x.charAt(0).toUpperCase()).join('')}
             </span>
-            <span className="hidden sm:inline">firoz<span className="text-accent-400">.</span>dev</span>
+            <span className="hidden sm:inline">{profile.name[0].toLowerCase()}<span className="text-accent-400">.</span>{profile.name[1]?.toLowerCase()}</span>
           </a>
 
           {/* Desktop nav */}

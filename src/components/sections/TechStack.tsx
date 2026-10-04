@@ -15,7 +15,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 export default function TechStack() {
   return (
-    <section id="tech-stack" className="relative section-pad py-24 md:py-32 bg-ink-900/40">
+    <section id="tech-stack" className="relative section-pad py-8 md:py-12 bg-ink-900/40">
       <div className="glow-orb h-[300px] w-[300px] bg-signal/6 top-1/3 right-[-120px]" />
 
       <div className="max-w-5xl mx-auto">

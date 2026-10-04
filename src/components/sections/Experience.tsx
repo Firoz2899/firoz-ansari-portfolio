@@ -5,7 +5,7 @@ import { experience } from '@/data/portfolio';
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative section-pad py-24 md:py-32">
+    <section id="experience" className="relative section-pad py-8 md:py-12">
       <div className="glow-orb h-[300px] w-[300px] bg-accent-500/5 bottom-1/4 right-[-120px]" />
 
       <div className="max-w-4xl mx-auto">

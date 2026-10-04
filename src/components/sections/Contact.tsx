@@ -75,7 +75,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative section-pad py-24 md:py-32 bg-ink-900/40">
+    <section id="contact" className="relative section-pad py-8 md:py-12 bg-ink-900/40">
       <div className="glow-orb h-[350px] w-[350px] bg-accent-500/8 top-1/3 left-[-150px]" />
 
       <div className="max-w-5xl mx-auto">

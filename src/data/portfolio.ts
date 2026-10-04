@@ -1,23 +1,33 @@
+import { Award, Code2, BadgeCheck, Briefcase, MapPin } from 'lucide-react';
 import developerImage from "@/assets/images/Developer-Image.jpg"
+// import developerImage from "@/assets/images/Developer-Image_2.webp"
+import developerHeroImage from "@/assets/images/developer-hero-image-4.png"
 import BookingListImg from "@/assets/images/projects/CarRental/BookingList.png"
 import CalendarViewImg from "@/assets/images/projects/CarRental/CalendarView.png"
 import DashboardImg from "@/assets/images/projects/CarRental/Dashboard.png"
 import EditScreenImg from "@/assets/images/projects/Bharattouch/EditScreen.png"
 import ProfileTemplateImg from "@/assets/images/projects/Bharattouch/ProfileTemplate.png"
 import Profile2Img from "@/assets/images/projects/Bharattouch/profile-2.png"
-// import ProfileImg from "@/assets/images/projects/Bharattouch/profile.png"
 
 export const profile = {
-  name: 'Firoz Ansari',
-  role: 'Full Stack Developer',
+  name: [
+    'Firoz',
+    'Ansari'
+  ],
+  available: true,
+  role: [
+    'Full Stack',
+    'Developer'
+  ],
   cv_url: '/Firoz-Ansari-CV.pdf',
   tagline: [
+    'Turning ideas into working products',
     'Building scalable web applications',
     'Crafting responsive React interfaces',
     'Developing robust REST APIs',
     'Building database-driven applications',
-    'Turning ideas into working products',
   ],
+  short_work_desc: 'I build modern, scalable and user-friendly web applications /n using React.js, .NET, Node.js and modern web technologies.',
   bio: [
     `I'm a Full Stack Developer with 2+ years of experience building scalable web applications using React.js, Next.js, ASP.NET MVC (C#), Node.js, and MSSQL. I work across both frontend and backend development, building responsive interfaces, RESTful APIs, authentication systems, admin dashboards, and database-driven applications.`,
     `In my professional experience, I've worked on applications including business platforms, e-commerce systems, car rental solutions, digital profile/NFC platforms, and marketplace applications. I've worked with both existing enterprise applications and new modules, focusing on responsive UI, API development, database integration, role-based permissions, and performance improvements.`
@@ -26,17 +36,26 @@ export const profile = {
   email: 'firozansari3712@gmail.com',
   phone: '+91 8198953511',
   photo: developerImage,
+  heroImage: developerHeroImage,
   social: {
     github: 'https://github.com/Firoz2899',
     linkedin: 'https://www.linkedin.com/in/firoz-alam-8a137b2b3/',
     twitter: '',
   },
   stats: [
-    { label: 'Years Experience', value: '2+' },
-    { label: 'Professional Projects', value: '5+' },
-    { label: 'Personal Projects', value: '2' },
-    { label: 'Primary Stack', value: 'Full Stack' },
+    { label: 'Years Experience', heroLabel: 'Years Experience', value: '2+' },
+    { label: 'Professional Projects', heroLabel: 'Projects Completed', value: '5+' },
+    { label: 'Personal Projects', heroLabel: '', value: '2' },
+    { label: 'Primary Stack', heroLabel: '', value: 'Full Stack' },
+    { label: '', heroLabel: 'Client Satisfaction', value: '100%' },
   ],
+  storyBadges: [
+    {label: 'India', icon: MapPin, iconColor: 'text-accent-400'},
+    {label: 'Full Stack Developer', icon: Code2, iconColor: 'text-signal'},
+    {label: '2+ Years Experience', icon: BadgeCheck, iconColor: 'text-signal'},
+    {label: 'Problem Solver', icon: Award, iconColor: 'text-signal'},
+    {label: 'Freelance & Full-time', icon: Briefcase, iconColor: 'text-signal'},
+  ]
 };
 
 export const skills = [
@@ -143,7 +162,7 @@ export const projects = [
     gradient: 'from-amber-500/20 to-orange-600/20',
     demo: 'https://www.boncnetwork.com/',
     github: '',
-    featured: true,
+    featured: false,
     images: [],
   },
   {
@@ -154,7 +173,7 @@ export const projects = [
     gradient: 'from-sky-500/20 to-cyan-600/20',
     demo: 'https://myprobook.com/',
     github: '',
-    featured: true,
+    featured: false,
     images: [],
   },
   {
@@ -163,7 +182,7 @@ export const projects = [
       'A modular REST API built with Node.js, Express.js, MongoDB, Mongoose, and JWT authentication. Includes authentication, profile management, file uploads, validation, reusable utilities, middleware, and a scalable backend architecture.',
     tech: ['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'JWT'],
     gradient: 'from-rose-500/20 to-pink-600/20',
-    demo: '#',
+    demo: '',
     github: 'https://github.com/Firoz2899/my-portfolio-backend',
     featured: false,
     images: [],
@@ -174,8 +193,24 @@ export const projects = [
       'A responsive portfolio application built with React.js and TypeScript. Demonstrates reusable component architecture, Redux Toolkit state management, Tailwind CSS, responsive design, and API integration.',
     tech: ['React.js', 'TypeScript', 'Redux Toolkit', 'Tailwind CSS'],
     gradient: 'from-violet-500/20 to-indigo-600/20',
-    demo: '#',
+    demo: '',
     github: 'https://github.com/Firoz2899/portfolio-frontend',
+    featured: false,
+    images: [],
+  },
+  {
+    title: 'Developer Portfolio',
+    description:
+      'A responsive developer portfolio built with React.js and TypeScript. Features reusable components, Tailwind CSS, responsive layouts, theme switching, animations, project showcases, contact functionality, and API integration.',
+    tech: [
+      'React.js',
+      'TypeScript',
+      'Tailwind CSS'
+    ],
+    gradient: 'from-violet-500/20 to-indigo-600/20',
+    demo: 'https://firoz-ansari.vercel.app/',
+    github:
+      'https://github.com/Firoz2899/firoz-ansari-portfolio',
     featured: false,
     images: [],
   },
