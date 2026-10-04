@@ -10,6 +10,7 @@ type ProjectCardProps = {
   github: string;
   featured?: boolean;
   index: number;
+  length: number;
   haveScreenshots: boolean;
   onOpenSlider: () => void;
 };
@@ -24,6 +25,7 @@ export default function ProjectCard({
   featured,
   haveScreenshots,
   index,
+  length,
   onOpenSlider,
 }: ProjectCardProps) {
 
@@ -32,10 +34,12 @@ export default function ProjectCard({
 
   const showActions = showGithub || showDemo || haveScreenshots;
 
+  const isOdd = index % 2 !== 0;
+
   return (
     <ScrollReveal
       delay={index * 80}
-      className={`group relative ${featured ? 'md:col-span-2' : ''}`}
+      className={`group relative ${(featured || (length - 1 === index && isOdd)) ? 'md:col-span-2' : ''}`}
     >
       <div className="relative h-full overflow-hidden rounded-2xl glass-card p-6 md:p-7 transition-all duration-500 hover:border-accent-400/20 hover:bg-ink-800/50 hover:-translate-y-1">
         {/* Gradient glow */}

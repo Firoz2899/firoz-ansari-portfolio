@@ -61,19 +61,19 @@ export default function Skills() {
           description="Proficiency across the full development stack"
         />
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-5">
           {skills.map((category, catIndex) => {
             const Icon = categoryIcons[category.category] || Code2;
             return (
               <ScrollReveal key={category.category} delay={catIndex * 120}>
-                <div className="glass-card p-6 md:p-7 h-full transition-all hover:border-accent-400/20 hover:-translate-y-1">
+                <div className="glass-card p-5 md:p-6 h-full flex flex-col transition-all hover:border-accent-400/20 hover:-translate-y-1">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-accent-500/15 to-signal/15 border border-white/5">
                       <Icon className="h-6 w-6 text-accent-300" />
                     </div>
                     <h3 className="text-lg font-semibold text-white">{category.category}</h3>
                   </div>
-                  <div className="space-y-4">
+                  <div className="space-y-3.5">
                     {category.items.map((skill, i) => (
                       <SkillBar
                         key={skill.name}
