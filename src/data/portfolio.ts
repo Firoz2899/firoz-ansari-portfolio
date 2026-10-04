@@ -10,6 +10,7 @@ import Profile2Img from "@/assets/images/projects/Bharattouch/profile-2.png"
 export const profile = {
   name: 'Firoz Ansari',
   role: 'Full Stack Developer',
+  cv_url: '/Firoz-Ansari-CV.pdf',
   tagline: [
     'Building scalable web applications',
     'Crafting responsive React interfaces',

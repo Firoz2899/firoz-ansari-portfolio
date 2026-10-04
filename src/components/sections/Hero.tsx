@@ -1,4 +1,4 @@
-import { ArrowDown, Sparkles } from 'lucide-react';
+import { ArrowDown, Download, Sparkles } from 'lucide-react';
 import { profile } from '@/data/portfolio';
 import { socials } from '../SocialLinks';
 import { Typewriter } from 'react-simple-typewriter';
@@ -72,6 +72,16 @@ export default function Hero() {
             View My Work
             <ArrowDown className="h-4 w-4" />
           </a>
+
+          <a
+            href={profile.cv_url}
+            download="Firoz-Ansari-CV.pdf"
+            className="btn-ghost"
+          >
+            Download CV
+            <Download className="h-4 w-4" />
+          </a>
+            
           <a href="#contact" className="btn-ghost">
             Get In Touch
           </a>
