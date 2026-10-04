@@ -63,9 +63,9 @@ export default function Navbar() {
               />
             </span> */}
             <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent-500 to-signal text-on-accent">
-              {profile.name.map(x => x.charAt(0).toUpperCase()).join('')}
+              {[profile.firstName, profile.lastName].filter(Boolean).map(x => x.charAt(0).toUpperCase()).join('')}
             </span>
-            <span className="hidden sm:inline">{profile.name[0].toLowerCase()}<span className="text-accent-400">.</span>{profile.name[1]?.toLowerCase()}</span>
+            <span className="hidden sm:inline">{profile.firstName.toLowerCase()}<span className="text-accent-400">.</span>{profile.lastName?.toLowerCase() || ""}</span>
           </a>
 
           {/* Desktop nav */}

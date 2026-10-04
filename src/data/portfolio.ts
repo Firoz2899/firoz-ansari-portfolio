@@ -9,10 +9,8 @@ import ProfileTemplateImg from "@/assets/images/projects/Bharattouch/ProfileTemp
 import Profile2Img from "@/assets/images/projects/Bharattouch/profile-2.png"
 
 export const profile = {
-  name: [
-    'Firoz',
-    'Ansari'
-  ],
+  firstName: 'Firoz',
+  lastName: 'Ansari',
   available: true,
   role: [
     'Full Stack',

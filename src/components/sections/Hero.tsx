@@ -69,11 +69,11 @@ export default function Hero() {
             {/* Name */}
 
             <h1 className="mb-3 text-5xl font-extrabold tracking-tight text-white sm:text-6xl md:text-7xl xl:text-8xl">
-              {profile.name[0]}{' '}
+              {profile.firstName}{' '}
               {
-                profile.name.length > 1 && (
+                (profile.lastName || "").length > 0 && (
                   <span className="gradient-text">
-                    {profile.name[1]}
+                    {profile.lastName}
                   </span>
                 )
               }
@@ -217,7 +217,7 @@ export default function Hero() {
 
                 <img
                   src={profile.heroImage}
-                  alt={`${profile.name.join(' ')} - ${profile.role.join(' ')}`}
+                  alt={`${profile.firstName} ${profile.lastName || ""} - ${profile.role.join(' ')}`}
                   className="h-full w-full object-cover object-top"
                 />
 

@@ -13,9 +13,9 @@ export default function Footer() {
           <div className="max-w-sm">
             <div className="flex items-center gap-2 font-mono text-xl font-bold text-white mb-3">
               <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-accent-500 to-signal text-ink-950">
-                {profile.name.map(x => x.charAt(0).toUpperCase()).join('')}
+                {[profile.firstName, profile.lastName].filter(Boolean).map(x => x.charAt(0).toUpperCase()).join('')}
               </span>
-              {profile.name.join(' ')}
+              {profile.firstName} {profile.lastName || ""}
             </div>
             <p className="text-ink-300 text-sm leading-relaxed">
               {profile.role.join(' ')} crafting performant web applications with modern
@@ -44,7 +44,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-sm text-ink-400">
-            <span>&copy; {new Date().getFullYear()} {profile.name.join(' ')}. Built with</span>
+            <span>&copy; {new Date().getFullYear()} {profile.firstName} {profile.lastName || ""}. Built with</span>
             <Heart className="h-3.5 w-3.5 text-rose-400 fill-rose-400/50" />
             <span>using React & Tailwind.</span>
           </div>

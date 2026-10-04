@@ -39,7 +39,7 @@ export default function About() {
 
                   <img
                     src={profile.photo}
-                    alt={`${profile.name.join(' ')} — ${profile.role.join(' ')}`}
+                    alt={`${profile.firstName} ${profile.lastName} — ${profile.role.join(' ')}`}
                     className="w-full h-[420px] md:h-[480px] object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
@@ -51,7 +51,7 @@ export default function About() {
 
                       <div>
                         <div className="font-semibold text-white text-sm">
-                          {profile.name.join(' ')}
+                          {profile.firstName} {profile.lastName || ""}
                         </div>
 
                         <div className="font-mono text-xs text-accent-300">
