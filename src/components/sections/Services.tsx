@@ -3,6 +3,7 @@ import type { LucideIcon } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { services } from '@/data/portfolio';
+import Section from '@/components/Section'
 
 const iconMap: Record<string, LucideIcon> = {
   Code2,
@@ -15,7 +16,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 export default function Services() {
   return (
-    <section id="services" className="relative section-pad py-8 md:py-12">
+    <Section id="services">
       <div className="max-w-6xl mx-auto">
         <SectionHeading
           eyebrow="Services"
@@ -52,6 +53,6 @@ export default function Services() {
           })}
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

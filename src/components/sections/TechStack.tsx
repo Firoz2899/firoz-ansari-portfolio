@@ -6,6 +6,7 @@ import {
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { techStack } from '@/data/portfolio';
+import Section from '@/components/Section'
 
 const iconMap: Record<string, LucideIcon> = {
   Atom, Triangle, Hexagon, Boxes, Code2, FileCode,
@@ -15,7 +16,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 export default function TechStack() {
   return (
-    <section id="tech-stack" className="relative section-pad py-8 md:py-12 bg-ink-900/40">
+    <Section id="tech-stack" className="bg-ink-900/40">
       <div className="glow-orb h-[300px] w-[300px] bg-signal/6 top-1/3 right-[-120px]" />
 
       <div className="max-w-5xl mx-auto">
@@ -43,6 +44,6 @@ export default function TechStack() {
           })}
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

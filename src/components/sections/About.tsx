@@ -2,11 +2,12 @@ import { Coffee, Award } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { profile } from '@/data/portfolio';
+import Section from '@/components/Section'
 
 export default function About() {
   const AboutStats = profile.stats.filter((stat) => stat.label.trim().length > 0);
   return (
-    <section id="about" className="relative section-pad py-8 md:py-12">
+    <Section id="about">
       <div className="glow-orb h-[300px] w-[300px] bg-accent-500/5 top-1/3 right-[-100px]" />
 
       <div className="max-w-6xl mx-auto">
@@ -114,6 +115,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

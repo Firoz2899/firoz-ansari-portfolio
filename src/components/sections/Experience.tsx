@@ -2,10 +2,11 @@ import { Briefcase, Calendar } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { experience } from '@/data/portfolio';
+import Section from '@/components/Section'
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative section-pad py-8 md:py-12">
+    <Section id="experience">
       <div className="glow-orb h-[300px] w-[300px] bg-accent-500/5 bottom-1/4 right-[-120px]" />
 
       <div className="max-w-4xl mx-auto">
@@ -66,6 +67,6 @@ export default function Experience() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

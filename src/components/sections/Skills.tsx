@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { skills } from '@/data/portfolio';
+import Section from '@/components/Section'
 
 const categoryIcons: Record<string, typeof Code2> = {
   Frontend: Code2,
@@ -50,7 +51,7 @@ function SkillBar({ name, level, delay }: { name: string; level: number; delay: 
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative section-pad py-8 md:py-12 bg-ink-900/40">
+    <Section id="skills">
       <div className="glow-orb h-[350px] w-[350px] bg-signal/8 top-1/2 left-[-150px]" />
 
       <div className="max-w-6xl mx-auto">
@@ -88,6 +89,6 @@ export default function Skills() {
           })}
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

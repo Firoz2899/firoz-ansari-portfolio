@@ -7,6 +7,7 @@ import { socials } from '@/components/SocialLinks';
 import { profile } from '@/data/portfolio';
 import { sendEmail } from '@/Services/email/sendEmail';
 import { config } from '@/utils/config';
+import Section from '@/components/Section'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
@@ -73,9 +74,9 @@ export default function Contact() {
     { icon: Phone, label: 'Phone', value: profile.phone, href: `tel:${profile.phone}` },
     { icon: MapPin, label: 'Location', value: profile.location, href: '#' },
   ];
-
+  
   return (
-    <section id="contact" className="relative section-pad py-8 md:py-12 bg-ink-900/40">
+    <Section id="contact">
       <div className="glow-orb h-[350px] w-[350px] bg-accent-500/8 top-1/3 left-[-150px]" />
 
       <div className="max-w-5xl mx-auto">
@@ -260,6 +261,6 @@ export default function Contact() {
           </ScrollReveal>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

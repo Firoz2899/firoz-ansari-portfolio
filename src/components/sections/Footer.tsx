@@ -6,20 +6,20 @@ import { socials } from '@/components/SocialLinks';
 export default function Footer() {
 
   return (
-    <footer className="relative section-pad pt-20 pb-8 border-t border-white/5">
+    <footer className="relative section-pad pt-10 pb-8 border-t border-white/5">
       <div className="max-w-6xl mx-auto">
         {/* Top section */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-12">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-6">
           {/* Logo + tagline */}
           <div className="max-w-sm">
             <div className="flex items-center gap-2 font-mono text-xl font-bold text-white mb-3">
               <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-accent-500 to-signal text-ink-950">
-                AR
+                {profile.name.map(x => x.charAt(0).toUpperCase()).join('')}
               </span>
-              {profile.name}
+              {profile.name.join(' ')}
             </div>
             <p className="text-ink-300 text-sm leading-relaxed">
-              {profile.role} crafting performant web applications with modern
+              {profile.role.join(' ')} crafting performant web applications with modern
               technologies. Always open to interesting conversations and new
               opportunities.
             </p>
@@ -40,12 +40,12 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-white/8 to-transparent mb-6" />
+        <div className="h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />
 
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-sm text-ink-400">
-            <span>&copy; {new Date().getFullYear()} {profile.name}. Built with</span>
+            <span>&copy; {new Date().getFullYear()} {profile.name.join(' ')}. Built with</span>
             <Heart className="h-3.5 w-3.5 text-rose-400 fill-rose-400/50" />
             <span>using React & Tailwind.</span>
           </div>

@@ -4,6 +4,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import ProjectCard from '@/components/ui/ProjectCard';
 import ImageSliderModal from '@/components/ui/ImageSliderModal';
 import { projects } from '@/data/portfolio';
+import Section from '@/components/Section'
 
 export default function Projects() {
   const [sliderState, setSliderState] = useState<{
@@ -20,7 +21,7 @@ export default function Projects() {
   const activeProject = projects[sliderState.projectIndex];
 
   return (
-    <section id="projects" className="relative section-pad py-24 md:py-32 bg-ink-900/40">
+    <Section id="projects" className="bg-ink-900/40">
       <div className="glow-orb h-[350px] w-[350px] bg-accent-500/8 top-1/3 left-[-150px]" />
       <div className="glow-orb h-[300px] w-[300px] bg-signal/6 bottom-1/4 right-[-120px]" />
 
@@ -72,6 +73,6 @@ export default function Projects() {
           onClose={closeSlider}
         />
       )}
-    </section>
+    </Section>
   );
 }
