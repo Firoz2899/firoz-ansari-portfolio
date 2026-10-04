@@ -1,6 +1,5 @@
-import { Award, Code2, BadgeCheck, Briefcase, MapPin } from 'lucide-react';
+import { Award, Code2, BadgeCheck, Briefcase, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
 import developerImage from "@/assets/images/Developer-Image.jpg"
-// import developerImage from "@/assets/images/Developer-Image_2.webp"
 import developerHeroImage from "@/assets/images/developer-hero-image-4.png"
 import BookingListImg from "@/assets/images/projects/CarRental/BookingList.png"
 import CalendarViewImg from "@/assets/images/projects/CarRental/CalendarView.png"
@@ -37,11 +36,11 @@ export const profile = {
   phone: '+91 8198953511',
   photo: developerImage,
   heroImage: developerHeroImage,
-  social: {
-    github: 'https://github.com/Firoz2899',
-    linkedin: 'https://www.linkedin.com/in/firoz-alam-8a137b2b3/',
-    twitter: '',
-  },
+  social: [
+    { icon: Github, href: 'https://github.com/Firoz2899', label: 'GitHub', show: true },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/firoz-alam-8a137b2b3/', label: 'LinkedIn', show: true },
+    { icon: Twitter, href: '', label: 'Twitter', show: false },
+  ],
   stats: [
     { label: 'Years Experience', heroLabel: 'Years Experience', value: '2+' },
     { label: 'Professional Projects', heroLabel: 'Projects Completed', value: '5+' },

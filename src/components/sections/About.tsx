@@ -46,7 +46,11 @@ export default function About() {
                           <span className="absolute inline-flex h-full w-full rounded-full bg-signal opacity-75 animate-pulse-ring" />
                           <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-signal" />
                         </span>
-                        <span className="text-xs text-ink-200">Available</span>
+                        {profile.available ? (
+                          <span className="text-xs text-ink-200">Available</span>
+                        ) : (
+                          <span className="text-xs text-ink-200">Not Available</span>
+                        )}
                       </div>
                     </div>
                   </div>

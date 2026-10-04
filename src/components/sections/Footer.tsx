@@ -1,7 +1,6 @@
 import { ArrowUp, Heart } from 'lucide-react';
 import { profile } from '@/data/portfolio';
 import { navLinks } from '@/components/NavLinks';
-import { socials } from '@/components/SocialLinks';
 
 export default function Footer() {
 
@@ -51,7 +50,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-3">
-            {socials.filter(x => x.show).map((social) => (
+            {profile.social.filter(x => x.show).map((social) => (
               <a
                 key={social.label}
                 href={social.href}

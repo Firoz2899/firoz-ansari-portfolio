@@ -2,11 +2,15 @@ import {
   ArrowRight,
   Code2,
   Download,
-  Sparkles,
+  Sparkles
 } from 'lucide-react';
+import {
+  SiReact,
+  SiDotnet,
+  SiNodedotjs,
+} from 'react-icons/si';
 
 import { profile } from '@/data/portfolio';
-import { socials } from '../SocialLinks';
 import React from 'react';
 
 export default function Hero() {
@@ -142,7 +146,7 @@ export default function Hero() {
             {/* ================= SOCIALS ================= */}
 
             <div className="mb-10 flex justify-center gap-3 lg:justify-start">
-              {socials
+              {profile.social
                 .filter((x) => x.show)
                 .map(({ icon: Icon, href, label }) => (
                   <a
@@ -294,16 +298,19 @@ export default function Hero() {
 
             <TechBadge
               className="right-[-5px] top-1/2"
+              icon={SiReact}
               label="React"
             />
 
             <TechBadge
               className="right-8 bottom-28"
+              icon={SiDotnet}
               label=".NET"
             />
 
             <TechBadge
               className="left-4 top-24"
+              icon={SiNodedotjs}
               label="Node.js"
             />
 
@@ -358,16 +365,20 @@ function Stat({
 
 function TechBadge({
   label,
+  icon: Icon,
   className,
 }: {
   label: string;
+  icon: React.ElementType;
   className: string;
 }) {
   return (
     <div
-      className={`absolute z-20 hidden rounded-xl border border-white/10 bg-ink-900/80 px-3 py-2 font-mono text-xs text-ink-200 shadow-xl backdrop-blur-xl sm:block ${className}`}
+      className={`absolute z-20 hidden items-center gap-2 rounded-xl border border-white/10 bg-ink-900/80 px-3 py-2 font-mono text-xs text-ink-200 shadow-xl backdrop-blur-xl sm:flex ${className}`}
     >
-      {label}
+      <Icon className="h-4 w-4 text-accent-400" />
+
+      <span>{label}</span>
     </div>
   );
 }

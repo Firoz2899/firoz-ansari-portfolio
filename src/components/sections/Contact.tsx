@@ -3,7 +3,6 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { Mail, MapPin, Send, CheckCircle2, Phone } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
-import { socials } from '@/components/SocialLinks';
 import { profile } from '@/data/portfolio';
 import { sendEmail } from '@/Services/email/sendEmail';
 import { config } from '@/utils/config';
@@ -120,7 +119,7 @@ export default function Contact() {
               <div className="mt-auto">
                 <div className="text-sm text-ink-300 mb-3">Follow me</div>
                 <div className="flex items-center gap-3">
-                  {socials.filter(x => x.show).map((social) => (
+                  {profile.social.filter(x => x.show).map((social) => (
                     <a
                       key={social.label}
                       href={social.href}
